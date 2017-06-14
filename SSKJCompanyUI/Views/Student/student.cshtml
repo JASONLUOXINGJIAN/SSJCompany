@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "student";
+}
+
+<script src="~/Content/StudentInfo.js"></script>
+<h2>学生信息</h2>
+
+<div id="toolbar" class="btn-group">
+    <button id="Add" type="button" class="btn btn-default" onclick="add()">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>添加
+    </button>
+    <button id="Edit" type="button" class="btn btn-default" onclick="edit()">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>修改
+    </button>
+
+    <button id="Del" type="button" class="btn btn-default" onclick="del()">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>删除
+    </button>
+</div>
+
+
+
+<table class="info1"></table>
+
+<div class="modal fade" id="Modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+    <div class="modal-dialog" role="document">
+        <input id="editId" type="hidden" value="" />
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                <h4 class="modal-title" id="myModalLabel1">添加学生</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="name">学生姓名</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="班级名称" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="XH">学号</label><br />
+                    <input type="text" name="XH" class="form-control" id="XH" placeholder="班级人数" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="classId">班级ID</label><br />
+                    <input type="text" name="classId" class="form-control" id="classId" placeholder="班级人数" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="sex">性别</label><br />
+                    <input type="text" name="sex" class="form-control" id="sex" placeholder="班级人数" style="width: 100%;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_add" class="btn btn-primary" onclick="btn_add()">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+
+            @*@Html.Partial("AddPartialView")*@
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Modal_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <input id="editId" type="hidden" value="" />
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                <h4 class="modal-title" id="myModalLabel2">修改学生</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit_name">学生名称</label>
+                    <input type="text" name="edit_name" class="form-control" id="edit_name" placeholder="班级名称" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="edit_XH">学号</label><br />
+                    <input type="text" name="edit_XH" class="form-control" id="edit_XH" placeholder="班级人数" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="edit_classId">班级ID</label><br />
+                    <input type="text" name="edit_classId" class="form-control" id="edit_classId" placeholder="班级人数" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label for="edit_sex">性别</label><br />
+                    <input type="text" name="edit_sex" class="form-control" id="edit_sex" placeholder="班级人数" style="width: 100%;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_edit" class="btn btn-primary" onclick="btn_edit()">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+
+            @*@Html.Partial("AddPartialView")*@
+        </div>
+    </div>
+</div>
+
+
+
+
+
